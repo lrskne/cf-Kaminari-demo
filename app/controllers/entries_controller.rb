@@ -56,7 +56,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
 
-      format.html redirect_to entries_url
+      redirect_to entries_url
   end
 
   private
