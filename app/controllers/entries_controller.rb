@@ -4,7 +4,16 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    # Tutorial point: I set kaminari config to 4 records per page
+    # (This can be overidden as shown in comments below)
+    @entries = Entry.page params[:page]
+    # ordered -
+    #   @entries = Entry.order(:name).page params[:page]
+    # overide default of 4 in the config/kaminari_config.rb created
+    # via rails g kaminari:config
+    #   @entries = Entry.page(params[:page]).per(5)
+    # prior to kaminari:
+    #   @entries = Entry.all
   end
 
   # GET /entries/1
