@@ -13,10 +13,17 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end
 
 # Added kaminari for pagination feature
 gem 'kaminari'
+
+# Added Dragonfly for image handling
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.15'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

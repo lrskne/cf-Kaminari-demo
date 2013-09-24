@@ -4,6 +4,7 @@
     <tr>
       <th>Name</th>
       <th>Phone</th>
+      <th>Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= entry.name %></td>
         <td><%= entry.phone %></td>
+        <td><%= image_tag entry.name_image.thumb('100x100').url if entry.name_image %>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>

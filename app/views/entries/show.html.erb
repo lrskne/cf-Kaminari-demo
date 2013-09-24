@@ -1,3 +1,9 @@
+<!-- On the show page add an image that is no greater than 300px tall, let the width vary. Retain aspect ratio. (Dynamic resize.)
+'400x300^'           # resize width, height to minimum 400,300, maintain aspect ratio
+'400x'               # resize width, maintain aspect ratio
+source: http://markevans.github.io/dragonfly/file.ImageMagick.html
+-->
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -8,6 +14,11 @@
 <p>
   <strong>Phone:</strong>
   <%= @entry.phone %>
+</p>
+<p>
+  <strong>Image</strong>
+  <%= image_tag @entry.name_image.thumb('x300').url %>
+
 </p>
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |

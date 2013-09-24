@@ -1,4 +1,4 @@
-<%= form_for(@entry) do |f| %>
+<%= form_for @entry, :html => {:multipart => true} do |f| %>
   <% if @entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
@@ -19,7 +19,15 @@
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
+  <div class="field">
+    <%= f.label :name_image, "Image" %><br>
+    <%= f.file_field :name_image %>
+  </div>
+  <%#= f.url_field :name_image.thumb('100x100').url if f.name_image %>
+  <%#= f.url_field :name_image %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
